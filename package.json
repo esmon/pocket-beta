@@ -15,6 +15,12 @@
     "connect-livereload": "~0.5.0",
     "express": "3.4.0",
     "express-validator": "^2.6.0",
+    "load-grunt-tasks": "~0.2.0",
+    "restler": "^3.2.2",
+    "swig": "1.4.2",
+    "time-grunt": "~0.1.1"
+  },
+  "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-bower-concat": "~0.4.0",
     "grunt-bower-task": "^0.4.0",
@@ -26,10 +32,6 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-express-server": "~0.4.19",
     "grunt-open": "^0.2.3",
-    "load-grunt-tasks": "~0.2.0",
-    "restler": "^3.2.2",
-    "swig": "1.4.2",
-    "time-grunt": "~0.1.1"
   },
   "engines": {
     "node": "4.1.1"
