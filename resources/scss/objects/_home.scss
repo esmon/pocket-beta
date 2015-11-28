@@ -1,0 +1,33 @@
+.home {
+	overflow: hidden;
+	border: $border-width white solid;
+	position: relative;
+	height: $window-height;
+
+	@include flexbox-vertical-center;
+}
+
+.home-msg {
+	font-size: 156px;
+	text-align: center;
+
+	&:hover {
+		@include rollover($c-black);
+		cursor: not-allowed;
+	}
+}
+
+
+// mobiles sizes
+@media screen and (max-width: $lap) {
+	.home {
+		margin: 15px 15px 0 15px;
+	}
+}
+
+@media screen and (max-width: $palm-land) {
+	.home {
+		margin: 0;
+		height: 100vh;
+	}
+}

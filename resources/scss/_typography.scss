@@ -1,0 +1,144 @@
+h1 {
+	
+	font-size: 8em;
+	margin-top: 0;
+	line-height: 1;
+
+	em {
+		font-style: normal;
+	}
+
+	span {
+		display: block;
+		font-size: 27%;
+		font-family: 'Lato', Helvetica, Arial, sans-serif;
+		font-weight: 300;
+		padding-top: 0.2em;
+	}
+
+	.sans-serif & {
+		color: $c-white;
+		font-family: 'Fjalla One', sans-serif;
+		font-weight: 400;
+		font-size: 7.6em;
+
+		span {
+			padding-left: 0.2em;
+		}
+	}
+
+	.serif & {
+		color: $c-white;
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+
+		span {
+			padding-top: 0.5em;
+		}
+	}
+}
+
+h2 {
+	font-size: 5em;
+	letter-spacing: 0px;
+	text-align: center;
+
+	.sans-serif & {
+		font-family: 'Fjalla One', sans-serif;
+		font-weight: 400;
+		color: $c-light-black;
+		line-height: 1.2;
+		margin: 0.43em;
+	}
+
+	.serif & {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		color: $c-blue;
+		line-height: 1.2;
+	}
+	
+}
+
+h3 {
+	.sans-serif & {
+		font-family: 'Fjalla One', sans-serif;
+		font-weight: 400;
+		color: $c-light-black;
+	}
+
+	.serif & {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		color: $c-blue;
+	}
+
+	font-size: 3em;
+	margin: 0;
+
+	&.alt {
+		color: $c-white;
+	}
+}
+
+h4 {
+	.sans-serif & {
+		font-family: 'Fjalla One', sans-serif;
+		font-weight: 400;
+		color: $c-light-black;
+	}
+
+	.serif & {
+		font-family: 'Playfair Display', serif;
+		font-weight: 700;
+		color: $c-blue;
+	}
+
+	font-size: 18px;
+	line-height: 24px;
+	text-transform: uppercase;
+	margin: 0 0 10px;
+}
+
+p  {
+	.sans-serif & {
+		font-family: 'Lato', Helvetica, Arial, sans-serif;
+	}
+
+	.serif & {
+		font-family: 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
+	}
+	
+	font-size: 1.5em;
+	color: $c-light-black;
+	line-height: 1.5;
+	text-align: left;
+
+	a {
+		.sans-serif & {
+			color: lighten($c-orange, 10%);
+
+			&:hover {
+				@include rollover($c-orange);
+			}
+		}
+		
+		.serif & {
+			color: lighten($c-blue, 10%);
+
+			&:hover {
+				@include rollover($c-blue);
+			}
+		}
+	}
+
+	&.alt {
+		color: $c-white;
+		font-size: 20px;
+		margin: 0;
+	}
+
+	@media screen and (max-width: $palm-land) {
+		font-size: 1.2em;
+	}
+}

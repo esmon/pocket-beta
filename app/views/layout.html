@@ -4,14 +4,17 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset="utf-8">
 
-		<title>Pocketbeta | Soon</title>
+		<title>{% block title %}{{ meta.title }}{% endblock %}</title>
 		<meta name="description" content="{{ meta.description|default('') }}">
-		<meta name="author" content="pocketbeta">
+		<meta name="author" content="Pocket Beta">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-		<link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+		<!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
 
+		{% block css %}
 		<link rel="stylesheet" href="/css/main.css">
+
+		{% endblock %}
 	</head>
 
 	<!--[if lte IE 9]>
@@ -22,10 +25,15 @@
 	<!--<![endif]-->
 		<main class="container">
 
-			<div class="home">
-				<p>Soon</p>
-			</div>
+			{% block content %}{% endblock %}
 
 		</main>
+
+
+		{% block javascript %}
+		<script src="/js/vendor.js"></script>
+		<script src="/js/main.js"></script>
+		{% endblock %}
+
 	</body>
 </html>
