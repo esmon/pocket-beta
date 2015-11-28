@@ -2,7 +2,7 @@ exports.index = function(req, res) {
 
 	var pageData = {
 		meta: {
-			title: 'home',
+			title: 'Pocket Beta coming soon',
 			description: '.|..'
 		}
 	};
