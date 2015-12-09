@@ -27,8 +27,6 @@ node_modules
 # Clientside dependency directory
 resources/components
 
-# Compiled resource files
-#public
 
 # Users Environment Variables
 .lock-wscript
@@ -40,3 +38,4 @@ resources/components
 
 #
 .DS_Store
+.firebase.json
