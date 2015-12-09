@@ -1,28 +1,52 @@
-# pocket-beta
+# Pocket Beta
+---
 
-#### Requirments:
+### Requirments:
 
 * [Node & NPM](http://nodejs.org/)
 * [Bower](http://bower.io/)
 * [Grunt](http://gruntjs.com/getting-started)
 * [Sass](http://sass-lang.com/install)
+* [Firebase Tools](https://www.firebase.com/docs/hosting/)
 
-## Getting Started
+
+### Getting Started
+
+```sh
+$ git clone [git-repo-url]
+$ cd pocket-beta
+```
 
 Install client side dependencies:
 
-`bower install`
+```sh
+$ bower install
+```
 
 Install grunt and server side dependencies
 
-`npm install`
+```sh
+$ npm install
+```
 
 Start the server locally
 
-`grunt`
+```sh
+$ grunt
+```
 
-## Grunt Tasks
+### Grunt Tasks
 
 `grunt` : starts node server, watches for changes to backend and front-end code and triggers livereload
 
 `grunt build` : optimizes resource files (js, css, images) for production environments
+
+### Firebase
+
+Setting up and deploying with Firebase
+
+```sh
+$ firebase init
+$ firebase login
+$ firebase deploy
+```
