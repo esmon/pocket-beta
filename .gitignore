@@ -38,4 +38,4 @@ resources/components
 
 #
 .DS_Store
-.firebase.json
+firebase.json
