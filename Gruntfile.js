@@ -83,7 +83,7 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
-					jquery: true,      // define globals used by jQuery
+					angular: true,     // define globals used by Angular
 					devel: true,       // define globals for console and alert
 					globals: {
 						pocketBeta: true
@@ -98,23 +98,13 @@ module.exports = function(grunt) {
 			prod: {
 				options: {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
-					jquery: true,      // define globals used by jQuery
+					angular: true,     // define globals used by Angular
 					globals: {
 						pocketBeta: true
 					}
 				},
 				files : {
 					src: ['resources/js/**/*.js']
-				}
-			},
-
-			// server side
-			server: {
-				options: {
-					node: true    // define globals specific to Node
-				},
-				files: {
-					src: ['app.js', 'app/**/*.js']
 				}
 			}
 		},
@@ -142,17 +132,7 @@ module.exports = function(grunt) {
 				livereload: true
 			},
 
-			express: {
-				files: [
-					'app.js',
-					'app/**/*.js',
-					'app/views/**/*.html'
-				],
-				tasks: ['jshint:server', 'express:dev'],
-				options: {
-					spawn: false
-				}
-			},
+			files: ['public/**/*'],
 
 			css: {
 				files: ['resources/scss/**/*.scss'],
@@ -165,17 +145,7 @@ module.exports = function(grunt) {
 			}
 		},
 
-		// start node app ----------------------------
-		express: {
-			dev: {
-				options: {
-					script: 'app.js'
-				}
-			}
-		},
-
-
-		// open browser express app ------------------
+		// open browser app ------------------
 		open : {
 			dev : {
 				path: 'http://localhost:3000',
@@ -185,12 +155,9 @@ module.exports = function(grunt) {
 	});
 
 	// default task
-	grunt.registerTask('default', ['concat', 'copy', 'bower_concat', 'sass:dev', 'express:dev', 'open', 'watch']);
+	grunt.registerTask('default', ['concat', 'copy', 'bower_concat', 'sass:dev', 'open', 'watch']);
 
 	// production task.
 	grunt.registerTask('build', ['jshint:prod', 'concat', 'copy', 'bower_concat', 'uglify', 'sass:prod']);
-
-	// heroku build task
-	grunt.registerTask('heroku', ['build']);
 
 };
