@@ -1,0 +1,1 @@
+var pocketBetaApp = angular.module('pocketBetaApp', []);

@@ -93,7 +93,7 @@ module.exports = function(grunt) {
 					angular: true,     // define globals used by Angular
 					devel: true,       // define globals for console and alert
 					globals: {
-						pocketBeta: true
+						pocketBetaApp: true
 					}
 				},
 				files: {
@@ -107,7 +107,7 @@ module.exports = function(grunt) {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
 					angular: true,     // define globals used by Angular
 					globals: {
-						pocketBeta: true
+						pocketBetaApp: true
 					}
 				},
 				files : {
