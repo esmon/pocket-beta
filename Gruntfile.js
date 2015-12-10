@@ -22,8 +22,15 @@ module.exports = function(grunt) {
 			},
 		},
 
-		// copy fonts to public ----------------------
+		// copy files to public ----------------------
 		copy: {
+			html: {
+				expand: true,
+				src: 'app/*',
+				dest: 'public/',
+				flatten: true,
+				filter: 'isFile'
+			},
 			fonts: {
 				expand: true,
 				cwd: 'resources/fonts/',
@@ -126,13 +133,25 @@ module.exports = function(grunt) {
 			}
 		},
 
+		livereload  : {
+			options   : {
+				base    : 'public',
+			},
+			files     : ['public/**/*']
+		},
+
 		// watch files for changes -------------------
 		watch: {
 			options: {
 				livereload: true
 			},
 
-			files: ['public/**/*'],
+			html: {
+	            files: ['app/*.html','app/**/*.html','**/*.css'],
+	            options: {
+	                livereload: true
+	            }
+	        },
 
 			css: {
 				files: ['resources/scss/**/*.scss'],
@@ -150,12 +169,15 @@ module.exports = function(grunt) {
 			dev : {
 				path: 'http://localhost:3000',
 				delay: 1000
+			},
+			file : {
+				path : 'public/'
 			}
 		}
 	});
 
 	// default task
-	grunt.registerTask('default', ['concat', 'copy', 'bower_concat', 'sass:dev', 'open', 'watch']);
+	grunt.registerTask('default', ['concat', 'copy', 'bower_concat', 'sass:dev', 'open', 'watch', 'livereload']);
 
 	// production task.
 	grunt.registerTask('build', ['jshint:prod', 'concat', 'copy', 'bower_concat', 'uglify', 'sass:prod']);
