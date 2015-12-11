@@ -1,3 +1,3 @@
-pocketBetaApp.controller('masterCtrl', function ($scope) {
+angular.module('pocketBetaApp').controller('masterCtrl', function ($scope) {
   $scope.soon = "Soon";
 });

@@ -90,10 +90,11 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
-					angular: true,     // define globals used by Angular
 					devel: true,       // define globals for console and alert
 					globals: {
-						pocketBetaApp: true
+						pocketBetaApp: true,
+						angular: true,     // define globals used by Angular
+						Firebase: true	   // define globals used by Firebase
 					}
 				},
 				files: {
@@ -106,8 +107,11 @@ module.exports = function(grunt) {
 				options: {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
 					angular: true,     // define globals used by Angular
+					Firebase: true,	   // define globals used by Firebase
 					globals: {
-						pocketBetaApp: true
+						pocketBetaApp: true,
+						angular: true,     // define globals used by Angular
+						Firebase: true	   // define globals used by Firebase
 					}
 				},
 				files : {
