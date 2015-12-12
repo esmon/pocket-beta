@@ -36,7 +36,7 @@ Setup a server block with port `3000` (grunt-open will open at 3000):
 server {
     listen 3000;
     server_name localhost;
-    root /YOUR DIRECTORY/binovi-web/public;
+    root /YOUR DIRECTORY/pocket-beta/public;
     location / {
         try_files $uri $uri/ /index.html;
     }
