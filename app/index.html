@@ -12,6 +12,7 @@
 		<!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
 
 		<link rel="stylesheet" href="css/main.css">
+		<base href="/">
 	</head>
 
 	<!--[if lte IE 9]>
@@ -22,9 +23,7 @@
 	<!--<![endif]-->
 		<main class="container">
 
-			<div class="home">
-				<p class="home-msg animation--title-slide-up">{{ soon }}</p>
-			</div>
+			<section ui-view></section>
 
 		</main>
 

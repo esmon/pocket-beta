@@ -28,8 +28,7 @@ module.exports = function(grunt) {
 				expand: true,
 				src: 'app/*',
 				dest: 'public/',
-				flatten: true,
-				filter: 'isFile'
+				flatten: true
 			},
 			fonts: {
 				expand: true,
@@ -152,9 +151,7 @@ module.exports = function(grunt) {
 
 			html: {
 	            files: ['app/*.html','app/**/*.html','**/*.css'],
-	            options: {
-	                livereload: true
-	            }
+				tasks: ['copy:html']
 	        },
 
 			css: {
@@ -173,9 +170,6 @@ module.exports = function(grunt) {
 			dev : {
 				path: 'http://localhost:3000',
 				delay: 1000
-			},
-			file : {
-				path : 'public/'
 			}
 		}
 	});

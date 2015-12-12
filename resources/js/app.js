@@ -1,7 +1,9 @@
 var pocketBetaApp = angular.module('pocketBetaApp', [
+	'ui.router',
 	'ngMaterial',
 	'firebase'
 ]);
+
 pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
 	$urlRouterProvider.otherwise('/');
 	$locationProvider.html5Mode(true);
