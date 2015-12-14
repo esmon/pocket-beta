@@ -98,11 +98,16 @@ $ grunt
 
 ### Firebase
 
-Setting up and deploying with Firebase
+Setup
 
 ```sh
 $ firebase init
 $ firebase login
+```
+
+Deploying
+
+```sh
 $ grunt build
 $ firebase deploy -m
 ```
