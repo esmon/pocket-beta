@@ -92,7 +92,7 @@ $ grunt
 
 ### Grunt Tasks
 
-`grunt` : starts node server, watches for changes to backend and front-end code and triggers livereload
+`grunt` : opens server, watches for changes to front-end code and triggers livereload
 
 `grunt build` : optimizes resource files (js, css, images) for production environments
 
@@ -103,5 +103,6 @@ Setting up and deploying with Firebase
 ```sh
 $ firebase init
 $ firebase login
-$ firebase deploy
+$ grunt build
+$ firebase deploy -m
 ```

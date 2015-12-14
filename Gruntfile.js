@@ -106,8 +106,6 @@ module.exports = function(grunt) {
 			prod: {
 				options: {
 					browser: true,     // define globals exposed by browsers (document, navigator, FileReader, etc)
-					angular: true,     // define globals used by Angular
-					Firebase: true,	   // define globals used by Firebase
 					globals: {
 						pocketBetaApp: true,
 						angular: true,     // define globals used by Angular
