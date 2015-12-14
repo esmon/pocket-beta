@@ -13,7 +13,7 @@ pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRo
 	$stateProvider
 	.state('home', {
 		url: '/',
-		templateUrl: 'views/home.html',
+		templateUrl: '/views/home.html',
 		controller: 'homeCtrl'
 	});
 
