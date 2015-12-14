@@ -11,10 +11,23 @@ pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRo
 .config(['$stateProvider', function ($stateProvider) {
 
 	$stateProvider
+	// app homepage
 	.state('home', {
 		url: '/',
 		templateUrl: '/views/home.html',
 		controller: 'homeCtrl'
+	})
+	// app
+	.state('app', {
+		url: '/app',
+		templateUrl: 'app.html', // doesn't exist yet
+		controller: 'appCtrl' // doesn't exist yet
+	})
+	// form to enter climbing info
+	.state('climbEnterForm', {
+		url: '/climb-enter-form',
+		templateUrl: '/views/climb-enter-form.html',
+		controller: 'climbEnterFormCtrl'
 	});
 
 }]);
