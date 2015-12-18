@@ -48,10 +48,6 @@ a {
 	text-decoration: none;
 }
 
-input {
-	color: $c-light-black;
-}
-
 *[contenteditable], button {
 	outline: none;
 }
@@ -60,18 +56,6 @@ address {
 	font-style: normal;
 }
 
-* ::selection {
-	.sans-serif & {
-		background: lighten($c-orange, 5%);
-	}
-	
-	.serif & {
-		background: lighten($c-blue, 5%);
-	}
-	
-	color: #fafaf4;
-	text-shadow: none!important;
-}
 
 .fourohfour {
 	background-image: url(/images/404.gif);
