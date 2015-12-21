@@ -383,9 +383,9 @@
             "ontario":{
                 "name":"Ontario",
                 "code":"ON",
-                "crags":[
-                    "niagara-glen"
-                ]
+                "crags":{
+                    "niagaraGlen":"niagaraGlen"
+                }
             },
             "prince-edward-island":{
                 "name":"Prince Edward Island",

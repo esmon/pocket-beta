@@ -56,6 +56,20 @@ address {
 	font-style: normal;
 }
 
+.inactive {
+	display: none;
+	opacity: 0;
+	@include translate3d(0,0,0);
+	@include transition-property(opacity);
+	@include transition-delay(0.3s);
+}
+
+.is-active {
+	display: block;
+	@include translate3d(0,0,0);
+	opacity: 1;
+}
+
 
 .fourohfour {
 	background-image: url(/images/404.gif);

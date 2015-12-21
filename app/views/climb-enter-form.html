@@ -1,5 +1,5 @@
-<md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding>
-	<div flex="70">
+<md-content md-theme="sector-dark" layout-padding>
+	<div layout="row">
 		<md-input-container>
 			<label>Sector</label>
 			<md-select ng-model="selectedSector">
@@ -8,6 +8,49 @@
 				</md-option>
 			</md-select>
 		</md-input-container>
+		<md-button class="md-primary" ng-click="newSector($event)">New Sector</md-button>
+	</div>
+
+	<!-- Update sector info -->
+	<div layout-gt-xs="row" ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive" ng-cloak>
+		<form name="updateSectorForm">
+			<div layout-gt-xs="row">
+				<div class="md-block" flex-gt-xs>
+					<img src="{{selectedSector.image}}" alt="{{selectedSector.name}}">
+				</div>
+
+				<div class="md-block" flex-gt-xs>
+					<input type="file" file-model="myFile">
+				</div>
+			</div>
+
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Sector Name</label>
+					<input ng-model="selectedSector.sectorName" required>
+				</md-input-container>
+
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Sector id</label>
+					<input ng-model="selectedSector.id" readonly>
+				</md-input-container>
+			</div>
+
+			<md-input-container class="md-block" flex-gt-xs>
+				<label>Description</label>
+				<textarea ng-model="selectedSector.description" columns="1" rows="5"></textarea>
+			</md-input-container>
+			
+			<div layout="row" layout-align="end center" layout-xs="row">
+				<md-button class="md-primary" ng-disabled="updateSectorForm.$invalid">Save</md-button>
+			</div>
+		</form>
+	</div>
+</md-content>
+
+<md-content layout-padding ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive" ng-cloak>
+
+	<div layout="row">
 		<md-input-container>
 			<label>Climb</label>
 			<md-select ng-model="selectedClimb">
@@ -16,39 +59,53 @@
 				</md-option>
 			</md-select>
 		</md-input-container>
+		<md-button class="md-primary" ng-click="newClimb($event)">New Climb</md-button>
 	</div>
-	<div layout="row" layout-align="end center" flex="30">
-		<md-button class="md-raised md-primary">New Sector</md-button>
-		<md-button class="md-raised md-primary">New Climb</md-button>
-	</div>
-</md-content>
-<md-content layout-padding>
-	<div ng-class="{ 'is-active' : selectedClimb }">
+
+	<!-- Update climbing info -->
+	<div layout="row" ng-class="{ 'is-active' : isEmptyObject(selectedClimb) > 2 }" class="inactive">
 		<form name="updateClimbForm">
-			<div layout-gt-xs="row">
-				<md-input-container class="md-block" flex-gt-xs>
+			<div layout-gt-xs="row" ng-show="selectedClimb.image">
+				<div class="md-block" flex-gt-xs>
+					<img src="{{selectedClimb.image}}" alt="{{selectedClimb.name}}">
+				</div>
+
+				<div class="md-block" flex-gt-xs>
+					<input type="file" file-model="myFile">
+				</div>
+			</div>
+
+			<div layout-gt-sm="row">
+				<md-input-container class="md-block" flex-gt-sm>
 					<label>Climb Name</label>
-					<input ng-model="selectedClimb.name">
+					<input ng-model="selectedClimb.name" required>
+				</md-input-container>
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Climb id</label>
+					<input ng-model="selectedClimb.id" readonly>
 				</md-input-container>
 			</div>
+
 			<md-input-container class="md-block" flex-gt-xs>
 				<label>Description</label>
-				<textarea ng-model="selectedClimb.description" columns="1" rows="5"></textarea>
+				<textarea ng-model="selectedClimb.description" columns="1" rows="5" required></textarea>
 			</md-input-container>
+
 			<div layout-gt-sm="row">
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Climb Type</label>
-					<input ng-model="selectedClimb.climbType">
+					<input ng-model="selectedClimb.climbType" required>
 				</md-input-container>
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Grade</label>
-					<input ng-model="selectedClimb.grade">
+					<input ng-model="selectedClimb.grade" required>
 				</md-input-container>
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Boulder Name</label>
 					<input ng-model="selectedClimb.boulderName">
 				</md-input-container>
 			</div>
+
 			<div layout-gt-sm="row">
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Start</label>
@@ -60,16 +117,32 @@
 					</md-checkbox>
 				</md-input-container>
 				<md-input-container class="md-block" flex-gt-sm>
-					<md-checkbox ng-model="selectedClimb.bl" aria-label="BL">
-						BL (?)
+					<md-checkbox ng-model="selectedClimb.badLanding" aria-label="Bad Landing">
+						Bad Landing
 					</md-checkbox>
 				</md-input-container>
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>GPS: Lat</label>
+					<input ng-model="selectedClimb.gps.lat">
+				</md-input-container>
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>GPS: Lon</label>
+					<input ng-model="selectedClimb.gps.lon">
+				</md-input-container>
+				<md-input-container class="md-block" flex-gt-sm>
+					<label>Star rating</label>
+					<input type="number" ng-model="selectedClimb.rating" min="0" max="5">
+				</md-input-container>
 			</div>
+
 			<md-input-container class="md-block" flex-gt-xs>
 				<label>Restrictions</label>
-				<textarea ng-model="selectedClimb.restrictions" columns="1" rows="5"></textarea>
+				<textarea ng-model="selectedClimb.restrictions" columns="1" rows="3"></textarea>
 			</md-input-container>
-			<md-button class="md-raised md-primary">Update</md-button>
+			
+			<div layout="row" layout-align="end center" layout-xs="row">
+				<md-button class="md-primary" ng-disabled="updateClimbForm.$invalid">Save</md-button>
+			</div>
 		</form>
 	</div>
 </md-content>
