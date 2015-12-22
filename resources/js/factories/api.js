@@ -20,7 +20,8 @@ angular.module('pocketBetaApp')
 
 			return deferred.promise;
 		},
-		crags: function(){
+		crags: function(slug){
+			console.log(data.crags + '.' +slug);
 			return data.crags;
 		},
 		sectors: function(){

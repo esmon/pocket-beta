@@ -1,5 +1,5 @@
 angular.module('pocketBetaApp')
-.controller('climbEnterFormCtrl', ['$scope', 'pocketBetaApp.api', function ($scope, Api) {
+.controller('climbEnterFormCtrl', ['$scope', 'pocketBetaApp.api', '$stateParams', function ($scope, Api, $stateParams) {
 
 	$scope.selectedSector = {};
 	$scope.selectedClimb = {};
@@ -32,11 +32,19 @@ angular.module('pocketBetaApp')
 	};
 
 	(function init(){
-		Api.initialize().then(function(){
-			$scope.crag = Api.crags();
-			$scope.sectors = Api.sectors();
+		// camel case function
+		function camelCase(input) { 
+			return input.toLowerCase().replace(/-(.)/g, function(match, group1) {
+				return group1.toUpperCase();
+			});
+		}
+		// url slug camelcase to find object in crags
+		$scope.cragSlug = camelCase($stateParams.slug);
 
-			console.log($scope.crag);
+		Api.initialize().then(function(){
+
+			$scope.crag = Api.crags($scope.cragSlug);
+			$scope.sectors = Api.sectors();
 		});
 	})();
 }])

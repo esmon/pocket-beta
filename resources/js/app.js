@@ -25,7 +25,7 @@ pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRo
 	})
 	// form to enter climbing info
 	.state('climbEnterForm', {
-		url: '/climb-enter-form',
+		url: '/climb-enter-form/:slug',
 		templateUrl: '/views/climb-enter-form.html',
 		controller: 'climbEnterFormCtrl'
 	});
