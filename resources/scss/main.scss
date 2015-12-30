@@ -9,7 +9,6 @@
 
 // Objects
 @import "objects/home";
-@import "objects/template";
 
 * {
 	box-sizing: border-box;
@@ -57,16 +56,10 @@ address {
 }
 
 .inactive {
-	display: none;
 	opacity: 0;
-	@include translate3d(0,0,0);
-	@include transition-property(opacity);
-	@include transition-delay(0.3s);
 }
 
 .is-active {
-	display: block;
-	@include translate3d(0,0,0);
 	opacity: 1;
 }
 

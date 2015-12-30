@@ -1,10 +1,10 @@
 <!doctype html>
-<html ng-app="pocketBetaApp" ng-controller="masterCtrl">
+<html ng-app="pocketBetaApp">
 	<head>
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta charset="utf-8">
 
-		<title>Pocket Beta | {{ meta.pageTitle }}</title>
+		<title>Pocket Beta |</title>
 		<meta name="description" content="{{ meta.description }}">
 		<meta name="author" content="Pocket Beta">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -16,12 +16,8 @@
 		<base href="/">
 	</head>
 
-	<!--[if lte IE 9]>
-	<body class="ie9" ng-controller="masterCtrl">
-	<![endif]-->
-	<!--[if (gt IE 9)|!(IE)]><!-->
-	<body>
-	<!--<![endif]-->
+
+	<body ng-controller="masterCtrl">
 		<main class="container" ng-cloak>
 
 			<section ui-view ng-cloak></section>

@@ -24,10 +24,10 @@ pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRo
 		controller: 'appCtrl' // doesn't exist yet
 	})
 	// form to enter climbing info
-	.state('climbEnterForm', {
-		url: '/climb-enter-form/:slug',
-		templateUrl: '/views/climb-enter-form.html',
-		controller: 'climbEnterFormCtrl'
+	.state('climbForm', {
+		url: '/climb-form/:slug',
+		templateUrl: '/views/climb-form.html',
+		controller: 'climbFormCtrl'
 	});
 
 }]);

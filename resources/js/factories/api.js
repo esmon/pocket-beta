@@ -1,7 +1,8 @@
 angular.module('pocketBetaApp')
 .factory('pocketBetaApp.api', ['$firebaseObject', '$q', function($firebaseObject, $q){
 
-	var data;
+	var data,
+		crag;
 
 	var service = {
 		initialize: function(){
@@ -20,12 +21,10 @@ angular.module('pocketBetaApp')
 
 			return deferred.promise;
 		},
-		crags: function(slug){
-			console.log(data.crags + '.' +slug);
-			return data.crags;
-		},
-		sectors: function(){
-			return data.crags.niagaraGlen.sectors; // niagara glen sectors
+		crag: function(slug){
+			var cragRef = new Firebase("https://pocket-beta-staging.firebaseio.com/crags/" + slug);
+			crag = $firebaseObject(cragRef);
+			return crag;
 		},
 		countries: function(){
 			return data.countrylist;
