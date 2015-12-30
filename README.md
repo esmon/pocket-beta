@@ -96,6 +96,12 @@ $ grunt
 
 `grunt build` : optimizes resource files (js, css, images) for production environments
 
+### Livereload
+
+* Install [Chrome Extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
+* `grunt`
+* Click Livereload extension icon.
+
 ### Firebase
 
 Setup
