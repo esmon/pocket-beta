@@ -100,7 +100,7 @@ $ grunt
 
 * Install [Chrome Extension](https://chrome.google.com/webstore/detail/livereload/jnihajbhpnppcggbcgedagnkighmdlei)
 * `grunt`
-* Click Livereload extension icon.
+* Click Livereload extension icon in the tab grunt opens
 
 ### Firebase
 
