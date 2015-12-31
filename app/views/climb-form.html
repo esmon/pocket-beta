@@ -1,7 +1,7 @@
 <md-content md-theme="sector-dark" layout-padding>
 	<div layout="row">
 		<md-input-container>
-			<label>Sector</label>
+			<label>Select Sector</label>
 			<md-select ng-model="selectedSector">
 				<md-option ng-repeat="sector in crag.sectors" ng-value="{{ sector }}">
 					{{ sector.sectorName }}
@@ -10,8 +10,6 @@
 		</md-input-container>
 		<md-button class="md-primary" ng-click="newSectorModal($event)">New Sector</md-button>
 	</div>
-
-	<pre>{{isEmptyObject(selectedSector)}}</pre>
 
 	<!-- Update sector info -->
 	<div layout-gt-xs="row" ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive" ng-cloak>
@@ -54,7 +52,7 @@
 
 	<div layout="row" ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive">
 		<md-input-container>
-			<label>Climb</label>
+			<label>Select Climb</label>
 			<md-select ng-model="selectedClimb">
 				<md-option ng-repeat="climb in selectedSector.sectorClimbs" ng-value="{{ climb }}">
 					{{ climb.name }}
@@ -94,7 +92,6 @@
 			</md-input-container>
 
 			<div layout-gt-sm="row">
-				<pre>{{selectedClimb.climbType}}</pre>
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Climb Type</label>
 					<md-select ng-model="selectedClimb.climbType">
