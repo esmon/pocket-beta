@@ -94,6 +94,7 @@
 			</md-input-container>
 
 			<div layout-gt-sm="row">
+				<pre>{{selectedClimb.climbType}}</pre>
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Climb Type</label>
 					<md-select ng-model="selectedClimb.climbType">
@@ -102,10 +103,6 @@
 						</md-option>
 					</md-select>
 				</md-input-container>
-<!-- 				<md-input-container class="md-block" flex-gt-sm>
-					<label>Climb Type</label>
-					<input ng-model="selectedClimb.climbType" required>
-				</md-input-container> -->
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Grade</label>
 					<input ng-model="selectedClimb.grade" required>
@@ -116,7 +113,7 @@
 				</md-input-container>
 				<md-input-container class="md-block" flex-gt-sm>
 					<label>Rock Name</label>
-					<input ng-model="selectedClimb.boulderName">
+					<input ng-model="selectedClimb.rockName">
 				</md-input-container>
 			</div>
 

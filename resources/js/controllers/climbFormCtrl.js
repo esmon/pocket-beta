@@ -66,7 +66,7 @@ angular.module('pocketBetaApp')
 			name:'',
 			climbType:'',
 			grade:'',
-			boulderName:'',
+			rockName:'',
 			image:'',
 			description:'',
 			topOut:'',
