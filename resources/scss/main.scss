@@ -9,6 +9,7 @@
 
 // Objects
 @import "objects/home";
+@import "objects/data-enter-form";
 
 * {
 	box-sizing: border-box;
@@ -56,11 +57,11 @@ address {
 }
 
 .inactive {
-	opacity: 0;
+	display: none;
 }
 
 .is-active {
-	opacity: 1;
+	display: block;
 }
 
 

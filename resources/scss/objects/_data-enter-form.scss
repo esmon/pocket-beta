@@ -1,0 +1,14 @@
+.data-enter-form__select {
+	&.md-input-has-value {
+		label {
+			display: none;
+		}
+	}
+}
+
+
+.md-select-value {
+	&:first-child {
+		font-size: 16px;
+	}
+}
