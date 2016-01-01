@@ -1,6 +1,10 @@
-<md-content md-theme="sector-dark" layout-padding>
-	<div layout="row">
-		<md-input-container>
+<md-toolbar>
+	<div class="md-toolbar-tools">
+		<h2>
+			<span>Sector</span>
+		</h2>
+		<span flex></span>
+		<md-input-container class="data-enter-form__select">
 			<label>Select Sector</label>
 			<md-select ng-model="selectedSector">
 				<md-option ng-repeat="sector in crag.sectors" ng-value="{{ sector }}">
@@ -8,9 +12,10 @@
 				</md-option>
 			</md-select>
 		</md-input-container>
-		<md-button class="md-primary" ng-click="newSectorModal($event)">New Sector</md-button>
+		<md-button class="md-primary" aria-label="New Sector" ng-click="newSectorModal($event)">New Sector</md-button>
 	</div>
-
+</md-toolbar>
+<md-content layout-padding>
 	<!-- Update sector info -->
 	<div layout-gt-xs="row" ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive" ng-cloak>
 		<form name="updateSectorForm">
@@ -48,10 +53,13 @@
 	</div>
 </md-content>
 
-<md-content layout-padding ng-cloak>
-
-	<div layout="row" ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive">
-		<md-input-container>
+<md-toolbar ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive">
+	<div class="md-toolbar-tools">
+		<h2>
+			<span>Climbs</span>
+		</h2>
+		<span flex></span>
+		<md-input-container class="data-enter-form__select">
 			<label>Select Climb</label>
 			<md-select ng-model="selectedClimb">
 				<md-option ng-repeat="climb in selectedSector.sectorClimbs" ng-value="{{ climb }}">
@@ -59,11 +67,14 @@
 				</md-option>
 			</md-select>
 		</md-input-container>
-		<md-button class="md-primary" ng-click="newClimbModal($event)">New Climb</md-button>
+		<md-button class="md-primary" aria-label="New Climb" ng-click="newClimbModal($event)">New Climb</md-button>
 	</div>
+</md-toolbar>
+
+<md-content layout-padding ng-cloak ng-class="{ 'is-active' : isEmptyObject(selectedSector) > 2 }" class="inactive">
 
 	<!-- Update climbing info -->
-	<div layout-gt-xs="row" ng-class="{ 'is-active' : isEmptyObject(selectedClimb) > 2 }" class="inactive">
+	<div layout-gt-xs="row">
 		<form name="updateClimbForm">
 			<div layout-gt-xs="row" ng-show="selectedClimb.image">
 				<div class="md-block" flex-gt-xs>

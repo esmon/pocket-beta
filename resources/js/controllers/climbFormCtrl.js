@@ -116,10 +116,4 @@ angular.module('pocketBetaApp')
 			$mdDialog.hide(newSectorData);
 		};
 	}
-}])
-.config(function($mdThemingProvider) {
-	// Configure a dark theme with primary foreground yellow
-	$mdThemingProvider.theme('sector-dark', 'default')
-		.primaryPalette('yellow')
-		.dark();
-});
+}]);
