@@ -1,4 +1,6 @@
+'use strict';
+
 angular.module('pocketBetaApp')
-.controller('masterCtrl', ['$scope', function ($scope) {
+.controller('masterCtrl', function ($scope) {
 	$scope.soon = "Soon";
-}]);
+});

@@ -1,5 +1,7 @@
+'use strict';
+
 angular.module('pocketBetaApp')
-.factory('pocketBetaApp.api', ['$firebaseObject', '$q', function($firebaseObject, $q){
+.factory('Api', function($firebaseObject, $q){
 
 	var data,
 		crag;
@@ -7,7 +9,7 @@ angular.module('pocketBetaApp')
 	var service = {
 		initialize: function(){
 			var deferred = $q.defer();
-			var ref = new Firebase("https://pocket-beta-staging.firebaseio.com");
+			var ref = new Firebase('https://pocket-beta-staging.firebaseio.com');
 			data = $firebaseObject(ref);
 
 			data.$loaded()
@@ -22,7 +24,7 @@ angular.module('pocketBetaApp')
 			return deferred.promise;
 		},
 		crag: function(slug){
-			var cragRef = new Firebase("https://pocket-beta-staging.firebaseio.com/crags/" + slug);
+			var cragRef = new Firebase('https://pocket-beta-staging.firebaseio.com/crags/' + slug);
 			crag = $firebaseObject(cragRef);
 			return crag;
 		},
@@ -34,4 +36,4 @@ angular.module('pocketBetaApp')
 
 	return service;
 
-}]);
+});
