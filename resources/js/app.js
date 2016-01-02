@@ -1,15 +1,14 @@
-'use strict';
+var pocketBetaApp = angular.module('pocketBetaApp', [
+	'ui.router',
+	'ngMaterial',
+	'firebase'
+]);
 
-angular.module( 'pocketBetaApp', [
-		'ui.router',
-		'ngMaterial',
-		'firebase'
-	])
-	.config(function($urlRouterProvider, $locationProvider) {
-		$urlRouterProvider.otherwise('/');
-		$locationProvider.html5Mode(true);
-	})
-	.config(function ($stateProvider) {
+pocketBetaApp.config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
+	$urlRouterProvider.otherwise('/');
+	$locationProvider.html5Mode(true);
+}])
+.config(['$stateProvider', function ($stateProvider) {
 
 	$stateProvider
 	// app homepage
@@ -31,4 +30,4 @@ angular.module( 'pocketBetaApp', [
 		controller: 'climbFormCtrl'
 	});
 
-});
+}]);
