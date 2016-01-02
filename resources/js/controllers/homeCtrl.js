@@ -1,6 +1,5 @@
-'use strict';
-
 angular.module('pocketBetaApp')
 .controller('homeCtrl', function ($scope) {
-  $scope.soon = 'Soon';
+	'use strict';
+	$scope.soon = 'Soon';
 });

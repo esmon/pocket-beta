@@ -1,7 +1,6 @@
-'use strict';
-
 angular.module('pocketBetaApp')
 .controller('climbFormCtrl', function ($scope, Api, $stateParams, $mdDialog, $mdMedia, $document) {
+	'use strict';
 
 	$scope.selectedSector = {};
 	$scope.selectedClimb = {};
