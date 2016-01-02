@@ -1,6 +1,8 @@
 angular.module('pocketBetaApp')
 .factory('pocketBetaApp.api', ['$firebaseObject', '$q', function($firebaseObject, $q){
 
+	'use strict';
+
 	var data,
 		crag;
 

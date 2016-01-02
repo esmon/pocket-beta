@@ -1,5 +1,6 @@
 angular.module('pocketBetaApp')
-.controller('climbFormCtrl', ['$scope', 'pocketBetaApp.api', '$stateParams', '$mdDialog', '$mdMedia', function ($scope, Api, $stateParams, $mdDialog, $mdMedia) {
+.controller('climbFormCtrl', function ($scope, Api, $stateParams, $mdDialog, $mdMedia, $document) {
+	'use strict';
 
 	$scope.selectedSector = {};
 	$scope.selectedClimb = {};
@@ -13,12 +14,12 @@ angular.module('pocketBetaApp')
 
 
 	$scope.isEmptyObject = function(obj) {
-		return Object.keys(obj).length; 
+		return Object.keys(obj).length;
 	};
 
 	(function init(){
 		// camel case function
-		function camelCase(input) { 
+		function camelCase(input) {
 			return input.toLowerCase().replace(/-(.)/g, function(match, group1) {
 				return group1.toUpperCase();
 			});
@@ -42,7 +43,7 @@ angular.module('pocketBetaApp')
 		$mdDialog.show({
 			controller: DialogController,
 			templateUrl: 'views/modals/new-sector.html',
-			parent: angular.element(document.body),
+			parent: angular.element($document.body),
 			targetEvent: ev,
 			clickOutsideToClose:true,
 			fullscreen: useFullScreen
@@ -83,12 +84,13 @@ angular.module('pocketBetaApp')
 		$mdDialog.show({
 			controller: DialogController,
 			templateUrl: 'views/modals/new-climb.html',
-			parent: angular.element(document.body),
+			parent: angular.element($document.body),
 			targetEvent: ev,
 			clickOutsideToClose:true,
 			fullscreen: useFullScreen
 		})
 		.then(function(newClimbData) {
+			console.log('here');
 			console.log(newClimbData);
 		}, function() {
 			console.log('close modal');
@@ -116,4 +118,10 @@ angular.module('pocketBetaApp')
 			$mdDialog.hide(newSectorData);
 		};
 	}
-}]);
+})
+.config(function($mdThemingProvider) {
+	// Configure a dark theme with primary foreground yellow
+	$mdThemingProvider.theme('sector-dark', 'default')
+		.primaryPalette('yellow')
+		.dark();
+});
